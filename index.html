@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Recibo Green & Blue</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="barra-guardar">
+    <span class="estado" id="estado">Sin cambios</span>
+    <button onclick="guardarDatos()">💾 Guardar</button>
+    <button onclick="limpiarDatos()">🗑 Limpiar</button>
+  </div>
+
+  <div class="recibo" id="recibo">
+
+    <!-- HEADER -->
+    <div class="sec-header">
+
+      <div class="logo-bloque">
+        <div class="logo-titulo">
+          <span class="txt-green">GREEN</span>
+          <span class="hoja">✿</span>
+          <span class="txt-blue">BLUE</span>
+        </div>
+        <div class="logo-sub">a q u a m a r i n e</div>
+        <div class="logo-slogan">Efecto y prevención en la funcionalidad física</div>
+      </div>
+
+      <div class="servicios-bloque">
+        <label><input type="checkbox" id="chk-rehab"> REHABILITACIÓN</label>
+        <label><input type="checkbox" id="chk-entre"> ENTRENIMIENTO</label>
+        <label><input type="checkbox" id="chk-masa"> MASAJES</label>
+        <label><input type="checkbox" id="chk-nata"> NATACIÓN</label>
+        <div class="tel-line">☎ 318 868 8008 / 310 740 6038</div>
+      </div>
+
+      <div class="recibo-bloque">
+        <div class="recibo-label">RECIBO</div>
+        <div class="recibo-num-row">
+          N<sup>o</sup>
+          <span class="recibo-num" id="recibo-num" contenteditable="true">0483</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FECHAS -->
+    <div class="sec-fechas">
+      <div class="fecha-grupo">
+        <span class="f-etiq">Fecha Inicio</span>
+        <div class="fecha-cajas">
+          <input class="caja-f" id="fi-d" maxlength="2" placeholder="DD">
+          <input class="caja-f" id="fi-m" maxlength="2" placeholder="MM">
+          <input class="caja-f caja-f-anio" id="fi-a" maxlength="4" placeholder="AAAA">
+        </div>
+      </div>
+      <div class="fecha-grupo">
+        <span class="f-etiq">Fecha Finalización</span>
+        <div class="fecha-cajas">
+          <input class="caja-f" id="ff-d" maxlength="2" placeholder="DD">
+          <input class="caja-f" id="ff-m" maxlength="2" placeholder="MM">
+          <input class="caja-f caja-f-anio" id="ff-a" maxlength="4" placeholder="AAAA">
+        </div>
+      </div>
+    </div>
+
+    <!-- DATOS PERSONALES -->
+    <div class="sec-datos">
+
+      <div class="fila-d">
+        <label class="lbl">Señor (es):</label>
+        <input type="text" class="inp flex1" id="nombre">
+      </div>
+
+      <div class="fila-d">
+        <label class="lbl">Teléfono:</label>
+        <input type="text" class="inp w180" id="telefono">
+        <label class="lbl ml">Ciudad:</label>
+        <input type="text" class="inp flex1" id="ciudad">
+      </div>
+
+      <div class="fila-d">
+        <label class="lbl">Dirección:</label>
+        <input type="text" class="inp flex1" id="direccion">
+        <label class="lbl ml">Edad:</label>
+        <input type="text" class="inp w55" id="edad">
+        <label class="lbl ml">Peso:</label>
+        <input type="text" class="inp w55" id="peso">
+        <label class="lbl ml">Talla:</label>
+        <input type="text" class="inp w55" id="talla">
+      </div>
+
+    </div>
+
+    <!-- TABLA -->
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th class="th-desc">DESCRIPCIÓN</th>
+          <th class="th-ppl">PPL.</th>
+          <th class="th-vr">VR. TOTAL</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        <tr>
+          <td contenteditable="true"></td>
+          <td contenteditable="true" class="td-center"></td>
+          <td contenteditable="true" class="td-right"></td>
+        </tr>
+        <tr>
+          <td contenteditable="true"></td>
+          <td contenteditable="true" class="td-center"></td>
+          <td contenteditable="true" class="td-right"></td>
+        </tr>
+        <tr>
+          <td contenteditable="true"></td>
+          <td contenteditable="true" class="td-center"></td>
+          <td contenteditable="true" class="td-right"></td>
+        </tr>
+        <tr>
+          <td contenteditable="true"></td>
+          <td contenteditable="true" class="td-center"></td>
+          <td contenteditable="true" class="td-right"></td>
+        </tr>
+        <tr>
+          <td contenteditable="true"></td>
+          <td contenteditable="true" class="td-center"></td>
+          <td contenteditable="true" class="td-right"></td>
+        </tr>
+        <tr>
+          <td contenteditable="true"></td>
+          <td contenteditable="true" class="td-center"></td>
+          <td contenteditable="true" class="td-right"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- TOTAL -->
+    <div class="sec-total">
+      <span class="total-lbl">TOTAL</span>
+      <span class="total-signo">$</span>
+      <input type="text" class="inp-total" id="total">
+    </div>
+
+    <!-- OBSERVACIONES + FIRMAS -->
+    <div class="sec-bottom">
+
+      <div class="obs-bloque">
+        <div class="obs-titulo">OBSERVACIONES</div>
+        <textarea class="obs-area" id="observaciones" rows="4"></textarea>
+      </div>
+
+      <div class="firmas-bloque">
+        <div class="firma">
+          <div class="firma-linea"></div>
+          <div class="firma-lbl">FIRMA DEL INSTRUCTOR</div>
+        </div>
+        <div class="firma">
+          <div class="firma-linea"></div>
+          <div class="firma-lbl">FIRMA DEL USUARIO</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
